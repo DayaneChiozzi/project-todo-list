@@ -1,3 +1,4 @@
+// requisito 8 resolvodo com ajuda do meu marido
 const input = document.querySelector('#texto-tarefa'); // recuperei a tag input
 
 function criarTarefa() {
@@ -10,9 +11,16 @@ function criarTarefa() {
 }
 
 function mudarCorFundo(event) {
-  const alvoDoClick = event.target;
-  alvoDoClick.style.backgroundColor = 'gray';
-  console.log(alvoDoClick);
+  const alvoDoClick = event.target; // alvo, elemento que vou clicar
+  const corDeFundo = document.querySelector('.colorItem'); // recuperando a classe que n ainda nao existe no HTML
+
+  if (corDeFundo !== null && corDeFundo !== alvoDoClick) {
+    // o 1 clique é null, o 2 clique em diante cai nessa condição
+    corDeFundo.classList.remove('colorItem');
+    alvoDoClick.classList.add('colorItem');
+  } else {
+    alvoDoClick.classList.add('colorItem'); // o 1 clique ele pinta
+  }
 }
 
 function eventController(event) {

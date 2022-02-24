@@ -22,18 +22,16 @@ function mudarCorFundo(event) {
     alvoDoClick.classList.add('colorItem'); // o 1 clique ele pinta
   }
 }
-
+// função double click
 function eventControllerDblClick(event) {
   console.log(event.target);
   if (event.target.classList.contains('completed')) {
+    // se o meu alvo tiver a classe nominada completed ele remove no double click
     event.target.classList.remove('completed');
-    console.log('caiu aqui');
   } else {
-    event.target.classList.add('completed');
-    console.log('nao, caiu aqui');
+    event.target.classList.add('completed'); // se náo ele adiciona a classe nominada completed
   }
 }
-
 function eventControllerClick(event) {
   if (event.target.id === 'criar-tarefa') {
     criarTarefa();
